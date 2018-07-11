@@ -1,0 +1,24 @@
+<div class="center">
+  {#if !errorMsg}
+    <div>Loading...</div>
+  {:else}
+    <div class="error">{errorMsg}</div>
+  {/if}
+</div>
+<script>
+  import API from './API'
+  import './style.css'
+
+  export default {
+    data () {
+      return {
+        errorMsg: ''
+      }
+    },
+    oncreate () {
+      setTimeout(() => {
+        this.set({ errorMsg: '出错了' })
+      }, 2000)
+    }
+  }
+</script>

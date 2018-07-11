@@ -1,0 +1,14 @@
+  {
+    "presets": ["env", "react"],
+    "plugins": [
+      "transform-object-rest-spread",
+      "transform-decorators-legacy",
+      "transform-async-to-generator",
+      "transform-runtime",
+      "syntax-dynamic-import", ["import", {
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        "style": "css"
+      }]
+    ]
+  }
