@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 import * as actions from '../../modules/home'
 
 const mapState = (state: any) => ({
-  homeReducer: state.homeReducer
+  homeReducer: state.homeReducer,
+  loginReducer: state.loginReducer
 })
 
 const mapDispatch = (dispatch: any) => bindActionCreators(actions, dispatch)

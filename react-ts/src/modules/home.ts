@@ -1,9 +1,10 @@
 import { createAction, createReducer } from 'redux-act'
+export { setAuth } from './login'
 
 export const setName: any = createAction('修改名称')
 
 const initialState = {
-  name: ''
+  name: 'aaa'
 }
 
 export default createReducer(
