@@ -17,7 +17,7 @@ class Home extends React.Component<IHomeProps, {}> {
     return (
       <div>
         <div>Hello, {name}</div>
-        <input value={name} onChange={e => this.changeName(e.target.value)} />
+        <input value={name} onChange={(e) => this.changeName(e.target.value)} />
       </div>
     )
   }
