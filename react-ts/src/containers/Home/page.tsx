@@ -2,15 +2,15 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 
 interface IHomeProps {
-  setName: any
+  setName: () => void
   name: string
-  homeReducer: any
-  loginReducer: any
-  setAuth: any
-  history: any
+  homeReducer: object
+  loginReducer: object
+  setAuth: () => void
+  history: object
 }
 
-class Home extends React.Component<IHomeProps, {}> {
+class Home extends React.Component<any, {}> {
   changeName(value: string) {
     const { setName } = this.props
     setName(value)

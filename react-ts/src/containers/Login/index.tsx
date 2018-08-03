@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as actions from '../../modules/login'
 
-const mapState = (state: any) => ({
+const mapState = (state: { homeReducer: {} }) => ({
   homeReducer: state.homeReducer
 })
 

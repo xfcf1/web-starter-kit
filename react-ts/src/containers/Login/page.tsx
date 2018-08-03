@@ -2,17 +2,10 @@ import * as React from 'react'
 import { Form, Input, Button } from 'antd'
 import * as styles from './index.scss'
 
-interface ILoginProps {
-  form: any
-  login: any
-  history: any
-}
-
-class Login extends React.Component<ILoginProps, {}> {
+class Login extends React.Component<any, any> {
   loginHandle() {
     const { form, login, history } = this.props
-    console.log(this.props)
-    form.validateFields((err: {}, values: any) => {
+    form.validateFields((err: object[] | null, values: object[]) => {
       if (!err) {
         login(values, history)
       }
