@@ -4,7 +4,7 @@ export { setAuth } from './login'
 export const setName: any = createAction('修改名称')
 
 const initialState = {
-  name: 'aaa'
+  name: ''
 }
 
 export default createReducer(

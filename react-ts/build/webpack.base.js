@@ -1,4 +1,3 @@
-const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = require('./config')
@@ -6,14 +5,14 @@ const rootPath = path.join(__dirname, '..')
 const templatePath = path.join(__dirname, 'index.html')
 
 module.exports = {
-  mode: 'development',
   entry: path.join(rootPath, 'src', 'index.tsx'),
   output: {
-    filename: 'app.js',
-    path: path.join(rootPath, 'dist')
+    filename: '[name].[hash:8].js',
+    path: path.join(rootPath, config.outputDir)
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    alias: config.alias,
+    extensions: config.extensions
   },
   module: {
     rules: [
@@ -21,21 +20,6 @@ module.exports = {
         test: /\.tsx?$/,
         use: ['awesome-typescript-loader'],
         exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.s[ac]ss$/,
-        use: [
-          'style-loader',
-          'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]',
-          'sass-loader'
-        ]
       }
     ]
   },
@@ -45,9 +29,5 @@ module.exports = {
       template: templatePath,
       filename: './index.html'
     })
-  ],
-  devServer: {
-    port: 9000,
-    contentBase: path.join(rootPath, 'dist')
-  }
+  ]
 }
