@@ -1,12 +1,13 @@
 import { createAction, createReducer } from 'redux-act'
 import { Dispatch } from 'redux'
 import { message } from 'antd'
+import { History } from 'history'
 import { RootState } from './state'
 import { setName } from './home'
 
 export const setAuth: any = createAction('修改登录状态')
 
-export function login({ username, password }: { username: string, password: string }, history: any) {
+export function login({ username, password }: { username: string, password: string }, history: History) {
   return (dispatch: Dispatch) => {
     if (username === 'alex' && password === '123') {
       dispatch(setAuth(true))

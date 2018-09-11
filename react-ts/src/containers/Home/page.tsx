@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
+import { History } from 'history'
 import { RootState } from '../../modules/state'
 
 interface IHomeProps {
@@ -8,7 +9,7 @@ interface IHomeProps {
   homeReducer: RootState.homeReducer
   loginReducer: RootState.loginReducer
   setAuth: (t: boolean) => void
-  history: any
+  history: History
 }
 
 class Home extends React.Component<IHomeProps> {
