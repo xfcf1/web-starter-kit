@@ -1,8 +1,16 @@
 import * as React from 'react'
 import { Form, Input, Button } from 'antd'
+import { History } from 'history'
+import { WrappedFormUtils } from 'antd/lib/form/Form'
 import * as styles from './index.scss'
 
-class Login extends React.Component<any, any> {
+interface IProps {
+  login: (str: object[], history: History) => void,
+  history: History,
+  form: WrappedFormUtils
+}
+
+class Login extends React.Component<IProps> {
   loginHandle() {
     const { form, login, history } = this.props
     form.validateFields((err: object[] | null, values: object[]) => {

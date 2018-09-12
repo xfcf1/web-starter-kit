@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { History } from 'history'
 import { RootState } from '../../modules/state'
 
-interface IHomeProps {
+interface IProps {
   setName: (t: string) => void
   name: string
   homeReducer: RootState.homeReducer
@@ -12,7 +12,7 @@ interface IHomeProps {
   history: History
 }
 
-class Home extends React.Component<IHomeProps> {
+class Home extends React.Component<IProps> {
   changeName(value: string) {
     const { setName } = this.props
     setName(value)
