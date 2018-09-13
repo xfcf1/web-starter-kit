@@ -10,4 +10,4 @@ const mapState = (state: IRootState) => ({
 
 const mapDispatch = (dispatch: Dispatch) => bindActionCreators(actions, dispatch)
 
-export default connect(mapState, mapDispatch)(Login)
+export default connect(mapState, mapDispatch)(Login as any)

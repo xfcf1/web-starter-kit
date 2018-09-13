@@ -4,7 +4,7 @@ import { History } from 'history'
 import { WrappedFormUtils } from 'antd/lib/form/Form'
 import * as styles from './index.scss'
 
-interface IProps {
+export interface IProps {
   login: (str: object[], history: History) => void,
   history: History,
   form: WrappedFormUtils
