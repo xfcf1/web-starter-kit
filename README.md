@@ -29,7 +29,7 @@ babel es6、async&await
     - other
     - 404
   - redux
-  - Antd UI框架
+  - Antd UI框架
   - axios请求接口
 - vue
   - router
@@ -38,6 +38,43 @@ babel es6、async&await
     - other
     - 404
   - vuex
-  - Element UI框架
+  - Element UI框架
   - axios请求接口
 
+### vscode 自动修复配置
+eslint：
+```
+
+    "editor.formatOnSave": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {
+            "language": "html",
+            "autoFix": true
+        },
+        {
+            "language": "vue",
+            "autoFix": true
+        }
+    ],
+    "eslint.options": {
+        "plugins": [
+            "html"
+        ],
+        "extensions": [
+            ".js",
+            ".vue"
+        ]
+    },
+    "eslint.autoFixOnSave": true,
+    "emmet.syntaxProfiles": {
+        "vue-html": "html",
+        "vue": [
+            "css",
+            "html",
+            "less"
+        ]
+    },
+    "tslint.autoFixOnSave": true
+```

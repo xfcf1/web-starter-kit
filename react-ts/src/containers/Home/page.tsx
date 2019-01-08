@@ -1,23 +1,24 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { History } from 'history'
-import { RootState } from '../../modules/state'
+import { ILoginReducer } from '../../modules/login'
+import { IHomeReducer } from '../../modules/home'
 
 interface IProps {
   setName: (t: string) => void
   name: string
-  homeReducer: RootState.homeReducer
-  loginReducer: RootState.loginReducer
+  homeReducer: IHomeReducer
+  loginReducer: ILoginReducer
   setAuth: (t: boolean) => void
   history: History
 }
 
 class Home extends React.Component<IProps> {
-  changeName(value: string) {
+  changeName = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { setName } = this.props
-    setName(value)
+    setName(e.target.value)
   }
-  logout() {
+  logout = () => {
     const { setAuth, history } = this.props
     setAuth(false)
     history.replace('login')
@@ -30,8 +31,8 @@ class Home extends React.Component<IProps> {
       return (
         <div>
           <div>Hello, {name}</div>
-          <input value={name} onChange={(e) => this.changeName(e.target.value)} />
-          <div onClick={() => this.logout()}>登出</div>
+          <input value={name} onChange={this.changeName} />
+          <div onClick={this.logout}>登出</div>
         </div>
       )
     }

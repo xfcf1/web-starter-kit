@@ -1,17 +1,27 @@
 {
   "defaultSeverity": "error",
   "extends": [
-      "tslint:recommended"
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-prettier"
   ],
   "jsRules": {},
   "rules": {
-    "quotemark": [true, "single"],
-    "semicolon": [true, "never"],
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "semicolon": [
+      true,
+      "never"
+    ],
     "ordered-imports": false,
     "no-console": false,
     "trailing-comma": false,
     "member-access": false,
     "no-namespace": false
   },
-  "rulesDirectory": ["./src"]
+  "rulesDirectory": [
+    "./src"
+  ]
 }

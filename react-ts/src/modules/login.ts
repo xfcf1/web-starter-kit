@@ -1,11 +1,10 @@
-import { createAction, createReducer } from 'redux-act'
+import { createAction, handleActions } from 'redux-actions'
 import { Dispatch } from 'redux'
 import { message } from 'antd'
 import { History } from 'history'
-import { RootState } from './state'
 import { setName } from './home'
 
-export const setAuth: any = createAction('修改登录状态')
+export const setAuth = createAction('修改登录状态')
 
 export function login({ username, password }: { username: string, password: string }, history: History) {
   return (dispatch: Dispatch) => {
@@ -24,14 +23,14 @@ export interface ILoginReducer {
   isAuth: boolean
 }
 
-const initialState: RootState.loginReducer = {
+const initialState: ILoginReducer = {
   isAuth: false
 }
 
-export default createReducer(
+export default handleActions<ILoginReducer, any>(
   {
-    [setAuth]: (state: {}, data: boolean) => {
-      return { ...state, isAuth: data }
+    [setAuth.toString()]: (state, data) => {
+      return { ...state, isAuth: data.payload }
     }
   },
   initialState

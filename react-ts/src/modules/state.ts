@@ -1,12 +1,7 @@
-import { IHomeReducer } from './home'
 import { ILoginReducer } from './login'
+import { IHomeReducer } from './home'
 
 export interface IRootState {
-  homeReducer: IHomeReducer,
-  loginReducer: ILoginReducer
-}
-
-export namespace RootState {
-  export type homeReducer = IHomeReducer
-  export type loginReducer = ILoginReducer
+  loginReducer: ILoginReducer,
+  homeReducer: IHomeReducer
 }

@@ -1,7 +1,7 @@
-import { createAction, createReducer } from 'redux-act'
+import { createAction, handleActions } from 'redux-actions'
 export { setAuth } from './login'
 
-export const setName: any = createAction('修改名称')
+export const setName = createAction('修改名称')
 
 export interface IHomeReducer {
   name: string
@@ -11,10 +11,10 @@ const initialState: IHomeReducer = {
   name: ''
 }
 
-export default createReducer<IHomeReducer>(
+export default handleActions<IHomeReducer, any>(
   {
-    [setName]: (state, data) => {
-      return { ...state, name: data }
+    [setName.toString()]: (state, data) => {
+      return { ...state, name: data.payload }
     }
   },
   initialState
